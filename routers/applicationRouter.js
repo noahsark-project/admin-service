@@ -5,7 +5,7 @@ const applicationController = require('../controllers/applicationController');
 
 router.post('/',
     [
-        check('name').isAlphanumeric().isLength({min:1}),
+        check('name').isString().isLength({min:1}),
         check('redirectUris').isArray()
     ],async (req, res)=>{
         const errors = validationResult(req);

@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-app.use('/api/application', applicationRouter);
+app.use('/api/v1/applications', applicationRouter);
 
 
 app.use((req, res, next) => {
@@ -38,4 +38,4 @@ app.use((err, req, res, next) => {
 });
 
 
-app.listen(8001, err => (err ? console.log('Error happened', err) : console.log('Server is up')));
+app.listen(8001, err => (err ? console.log('Error happened', err) : console.log('Server is up on 8081')));

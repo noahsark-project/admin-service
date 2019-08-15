@@ -5,14 +5,15 @@ const applicationSchema = new Schema({
     name: String,
     clientId: String,
     clientSecret: String,
-    redirectUris: {
-        type: [String]
-    },
+    redirectUris: [String],
     grants: {
         type: [String],
         default: ['authorization_code', 'password', 'refresh_token', 'client_credentials', 'implicit']
     },
-    scope: String,
+    scope: {
+        type:[String],
+        default: ['profile']
+    },
     is3rdPart: {
         type: Boolean,
         default: false
